@@ -1,0 +1,260 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styles */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    
+  }
+  
+  /* Header Styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+  }
+  
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  header nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  header nav ul li {
+    margin-right: 20px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  header .search-bar input {
+    padding: 5px;
+  }
+  
+  header .language-selector {
+    margin-left: 20px;
+  }
+
+  /* Styling for the login link */
+.language-selector a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF; /* Primary color */
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect */
+.language-selector a:hover {
+  background-color: #0056b3; /* Darker shade of primary color */
+  color: #ffffff; /* Ensure text color remains white */
+}
+
+/* Active state */
+.language-selector a:active {
+  background-color: #00408b; /* Even darker shade for active state */
+}
+
+  
+  /* Hero Section Styles */
+  .hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: black;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+  }
+  
+  .hero p {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+  
+  .hero .cta-button {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .cta-button{
+    background: #f16a5d;
+
+  }
+
+  .cta-button:hover{
+    background: #d83425;
+
+  }
+  
+  /* Section Styles */
+  section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  section h2 {
+    margin-bottom: 40px;
+    font-size: 32px;
+  }
+  
+  /* Card Styles */
+  .card {
+    background: #cec8c8dd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px;
+    text-align: left;
+    width: 300px;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    
+  }
+  
+
+  .destination-cards{
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Top rated places*/
+  .tour-cards{
+    display: flex;
+    flex-direction: row;
+  }
+
+
+
+  /* Testimonials Slider */
+  .testimonials-slider {
+   display: flex;
+    overflow: auto;
+  }
+  
+  /* .testimonials-slider .testimonial { */
+    /* min-width: 300px;
+    margin: 0 10px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  } */
+
+  .reviewSec{
+    min-width: 300px;
+    margin: 0 10px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  
+  }
+  
+  .indeximg {
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+    padding: 5px;
+    
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+
+  }
+
+  .indeximg img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    
+  }
+  
+  /* Newsletter Signup */
+  #newsletter form {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #newsletter input {
+    padding: 10px;
+    margin-right: 10px;
+  }
+  
+  #newsletter button {
+    padding: 10px;
+    background: #f16a5d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  #newsletter button:hover{
+    background: #d83425;
+
+  }
+  
+  /* Footer Styles */
+  footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer .quick-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  footer .contact-info p {
+    margin: 10px 0;
+  }
+  
+  footer .social-media a img {
+    width: 24px;
+    margin: 0 5px;
+  }
+  
+
+  /* tours.html */
+
+  .t1{
+    display: flex;
+    flex-direction: row;
+  }
+
+  main{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+  }

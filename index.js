@@ -28,12 +28,21 @@ const home = require('./router/home/home.page');
 const about = require('./router/home/about.page');
 const contact = require('./router/home/contact.page');
 const reviewPlaces = require('./router/home/review.page');
+const tours=require('./router/home/tours.page');
+
+const saputara=require('./router/tours/gujarat/saputara.page');
+const mountabu=require('./router/tours/rajasthan/mountabu.page');
 
 // Use routes
 app.use('/', home);
 app.use('/about', about);
 app.use('/contact', contact);
 app.use('/review', reviewPlaces);
+app.use('/tours',tours);
+
+app.use('/tours/saputara',saputara);
+app.use('/tours/mountabu',mountabu);
+
 
 // Start the server
 const port = process.env.PORT || 1234;

@@ -1,0 +1,152 @@
+<%- include('../../common/header') %>
+<style>
+    .m1{
+        margin-top: 5px;
+        width: 1200px;
+    }
+
+    .st1{
+        font-size: 33px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+    }
+    .st2 {
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: 10px;
+    }
+
+    .invincible{
+        height: fit-content;
+        width: 200px;
+        background-color: rgb(203, 190, 190);
+        padding: 5px;
+        margin: 2px 5px;
+    }
+    .orgcard img{
+        width: 100%;
+        height: 200px;      
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .org{
+        display: flex;
+        padding: 15px;
+        margin: 5px;
+    }
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .card {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 15px;
+        width: 300px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .card-details {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+</style>
+<main>
+    <div class="m1">
+        <div class="st1">
+            Mount Abu Trekking Camp
+        </div>
+        <div class="st2">
+            Adventure in Aravalli!
+        </div>
+        <hr>
+
+        <div class="sabout">
+            <div class="st1">
+               About
+            </div>
+    
+            <div class="st2">
+                Mount Abu is a popular hill station in the Aravalli Range in Sirohi district of Rajasthan state. Mount Abu is located at the altitude of 1220 meters from sea level and hence is an attractive hill station of people from Gujarat as well as Rajasthan.
+            </div>
+        </div>
+
+        <div class="st1">Mount Abu Attractions</div>
+        <div class="st2">Explore the must-visit points in Mount Abu</div>
+
+        <div class="card-container">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fG5ha2tpJTIwbGFrZXxlbnwwfHx8fDE2NzQ1MTQ2Mzk&ixlib=rb-4.0.3&q=80&w=1080" alt="Nakki Lake">
+        <div class="card-content">
+            <div class="card-title">Nakki Lake</div>
+            <div class="card-details">
+                A scenic lake with boating facilities, surrounded by hills and lush greenery, making it a prime spot for relaxation and leisure in Mount Abu.
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://media.gettyimages.com/id/947601140/photo/plafond-du-temple-ja%C3%AFn-de-dilwara-sur-le-mont-abu-dans-le-rajasthan-en-inde.jpg?s=612x612&w=0&k=20&c=f7KP4KHUiF2mAlZnGoFeutgGOzYiNq3Sg8eRlUio3U4=">
+        <div class="card-content">
+            <div class="card-title">Dilwara Temples</div>
+            <div class="card-details">
+                The Dilwara Temples are famous for their stunning marble architecture and intricate carvings. Built between the 11th and 13th centuries, these Jain temples showcase India's rich cultural heritage.
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src=" https://media.gettyimages.com/id/812290940/photo/view-from-guru-shikhar-mount-abu-rajasthan-india.jpg?s=612x612&w=0&k=20&c=38E5EI4JWG4_IDocXc_bxfabd3rRR-BsWkkwHwchSuc=" alt="Guru Shikhar">
+        <div class="card-content">
+            <div class="card-title">Guru Shikhar</div>
+            <div class="card-details">
+                The highest peak in the Aravalli Range, offering panoramic views of the region. Guru Shikhar also houses the Guru Dattatreya Temple, making it a trekker's delight.
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src=" https://media.gettyimages.com/id/1402197028/photo/person-watching-the-sunset-along-the-teide-mountain-teide-national-park-tenerife.jpg?s=612x612&w=0&k=20&c=yD1cH5YYB9sEEZAKSm-Zl1mrTOhpCgC8saEsxqilgC8=" alt="Sunset Point">
+        <div class="card-content">
+            <div class="card-title">Sunset Point</div>
+            <div class="card-details">
+                Witness the sun setting over the beautiful Aravalli hills from Sunset Point, a favorite among tourists and photographers.
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://media.gettyimages.com/id/986432282/photo/the-toad-stools-in-utah.jpg?s=612x612&w=0&k=20&c=6E_Z5PBAytnsPqexV2mLI0FG6iQYoV5dIu4Zi58pA74=" alt="Toad Rock">
+        <div class="card-content">
+            <div class="card-title">Toad Rock</div>
+            <div class="card-details">
+                A unique rock formation resembling a toad, offering a fun hike and a fantastic view of Nakki Lake and the surrounding landscape.
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div><br>
+</main>
+<%- include('../../common/footer') %>

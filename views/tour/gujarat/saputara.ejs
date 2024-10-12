@@ -1,0 +1,167 @@
+<%- include('../../common/header') %>
+
+<style>
+    .m1 {
+        margin-top: 5px;
+        width: 1200px;
+    }
+
+    .st1 {
+        font-size: 33px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+    }
+
+    .st2 {
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: 10px;
+    }
+
+    .invincible {
+        height: fit-content;
+        width: 200px;
+        background-color: rgb(203, 190, 190);
+        padding: 5px;
+        margin: 2px 5px;
+    }
+
+    .orgcard img {
+        width: 100%;
+        height: 200px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .org {
+        display: flex;
+        padding: 15px;
+        margin: 5px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        justify-content: space-between;
+    }
+
+    .card {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 15px;
+        width: 300px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .card-details {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+</style>
+
+<main>
+    <div class="m1">
+        <div class="st1">Saputara Adventure Camp</div>
+        <div class="st2">Simply Kashmir of Gujarat!</div>
+        <hr>
+
+        <div class="sabout">
+            <div class="st1">About</div>
+            <div class="st2">
+                Saputara hill station is situated in the district of Dang. It is a part of the Sahyadri range of mountains and the highest point is at an altitude of 1081 metres from sea level. After the very first rain of the season, the whole area comes out full of greenery, frequent waterfalls, and gushing streams. Saputara Adventure Camp is all about feeling the thrill of camping in these most beautiful hills. The participants will stay in tents, visit tourist places and hike up to nearby hills. The city has been developed as a Hill Station by the government and is a hot favourite place of tourists all the way coming from Gujarat, Nashik and Bombay. The place is also famous for its rich tribal heritage and festivals. Many museums are here showing the culture of the Dangs, the local tribe.
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- Attractions Section -->
+    <div class="m1">
+        <div class="st1">Saputara Attractions</div>
+        <div class="st2">Explore the must-visit points in Saputara</div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/48/7c/c9/sunset-point.jpg?w=900&h=-1&s=1" alt="Sunset Point">
+                <div class="card-content">
+                    <div class="card-title">Sunset Point</div>
+                    <div class="card-details">
+                        Enjoy a stunning view of the sun setting over the Western Ghats. Sunset Point is one of the most popular attractions in Saputara, offering a panoramic view of the hills and valleys. It’s perfect for photography and relaxation.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/27/6f/95/a-view-of-the-lake-from.jpg?w=500&h=-1&s=1" alt="Saputara Lake">
+                <div class="card-content">
+                    <div class="card-title">Saputara Lake</div>
+                    <div class="card-details">
+                        A serene spot, Saputara Lake is surrounded by green hills and ideal for boating. Visitors can enjoy a peaceful ride on the calm waters, take a leisurely stroll along the banks, and relax while absorbing the beauty of nature.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/0c/9e/d5/townview-point.jpg?w=500&h=-1&s=1" alt="Artist Village">
+                <div class="card-content">
+                    <div class="card-title">Artist Village</div>
+                    <div class="card-details">
+                        A must-visit for art lovers, Artist Village showcases traditional tribal handicrafts, paintings, and sculptures. It's a great place to purchase unique souvenirs and learn about the local tribal culture through interactive workshops and displays.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/80/bf/c8/look-at-the-crowd.jpg?w=500&h=-1&s=1" alt="Echo Point">
+                <div class="card-content">
+                    <div class="card-title">Echo Point</div>
+                    <div class="card-details">
+                        A fun attraction for families, Echo Point lets you shout across the valley and hear your voice echo back. It offers great scenic views of the surrounding hills and is a fun stop for those who enjoy natural wonders.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/ae/e3/68/gira-waterfalls.jpg?w=500&h=-1&s=1" alt="Gira Waterfalls">
+                <div class="card-content">
+                    <div class="card-title">Gira Waterfalls</div>
+                    <div class="card-details">
+                        Gira Waterfalls is a breathtaking waterfall near Saputara that is most majestic during the monsoon season. Cascading from a height, the falls create a cool misty atmosphere, attracting nature lovers and adventure enthusiasts alike for a refreshing visit.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/ff/92/1e/main-attraction.jpg?w=500&h=-1&s=1" alt="Saputara Tribal Museum">
+                <div class="card-content">
+                    <div class="card-title">Saputara Tribal Museum</div>
+                    <div class="card-details">
+                        A local museum depicting the living style, ornaments, arts, musical instruments, culture of the local tribes. It requires 30 min to 1 hour to complete the visit. The museum is located in the main town, it had entry fee of Rs 5 each.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</main>
+
+<%- include('../../common/footer') %>

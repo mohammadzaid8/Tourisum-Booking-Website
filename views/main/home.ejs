@@ -1,6 +1,95 @@
 <%- include('../common/header') %>
 
+<style>
+ #testimonials {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+  text-align: center;
+}
 
+#testimonials h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.testimonials-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+}
+
+.testimonials-slider::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.reviewSec {
+  flex: 0 0 350px; /* Increased width for each review section */
+  scroll-snap-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reviewSec:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Larger image box */
+.indeximg {
+  width: 100%;
+  height: 350px; /* Increased height of the image box */
+  overflow: hidden;  /* Ensures that any part of the image larger than the box is hidden */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.indeximg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* Ensures the whole image is visible within the box */
+  display: block;
+}
+
+.testimonial p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.testimonial p b {
+  font-weight: 600;
+  color: #333;
+}
+
+.testimonial p:nth-child(4) {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #007bff; /* Highlighting the reviewer's name */
+}
+
+@media (max-width: 768px) {
+  .testimonials-slider {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .reviewSec {
+    width: 100%;
+  }
+}
+
+
+</style>
   <!-- Hero Section -->
   <section class="hero">
     <h1>Discover Your Next Adventure</h1>

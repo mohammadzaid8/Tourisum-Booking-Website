@@ -1,21 +1,13 @@
+// router/home/review.page.js
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-const multer = require('multer');
 const ReviewPlace = require('../../model/review.places/review.model');
+const upload = require('../../middleware/multer.middleware');
+const { uploadOnCloudinary } = require('../../utility/cloudinary');
+const fs = require('fs');
 
-// Configure Multer for file upload
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'public/'); // Save files to 'uploads/' directory
-    },
-    filename: function (req, file, cb) {
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        cb(null, uniqueSuffix + '-' + file.originalname);
-    }
-});
-
-const upload = multer({ storage: storage });
+// Default image URL (replace with your actual default image URL from Cloudinary or any placeholder)
+const defaultImageUrl = 'https://res.cloudinary.com/your_cloud_name/image/upload/v1234567890/default-image.jpg';
 
 // Render the review form
 router.get('/', (req, res) => {
@@ -23,33 +15,49 @@ router.get('/', (req, res) => {
 });
 
 // Handle form submission with file upload
-router.post('/createReview', upload.single('reviewImage'), (req, res) => {
-    console.log(req.body);
-    console.log(req.file); // This will log the uploaded file data
+router.post('/createReview', upload.single('reviewImage'), async (req, res) => {
+    try {
+        const { reviewerName, campName, reviewText, placeName } = req.body;
 
-    const { reviewerName, campName, reviewText,placeName } = req.body;
+        let imageUrl = defaultImageUrl; // Use default image URL initially
 
-    // Get the uploaded image path
-    const image =  'path/to/default-image.jpg';
+        if (req.file) {
+            // Path to the uploaded file
+            const localFilePath = req.file.path;
 
-    // Create a new review object
-    const newReview = new ReviewPlace({
-        reviewerName,     // Your Name from form
-        placeName, // Place Name from form
-        review: reviewText, // Review content
-        companyName:campName, // Dummy for now
-        image: "nothing" // Use uploaded image path
-    });
+            // Upload the image to Cloudinary
+            const uploadedUrl = await uploadOnCloudinary(localFilePath);
 
-    // Save the review to the database
-    newReview.save()
-        .then(() => {
-            res.redirect('/');
-        })
-        .catch(err => {
-            console.error(err);
-            res.send('Error saving review');
+            if (uploadedUrl) {
+                imageUrl = uploadedUrl;
+            }
+
+            // Delete the local file after uploading to Cloudinary
+            fs.unlink(localFilePath, (err) => {
+                if (err) {
+                    console.error('Error deleting local file:', err);
+                } else {
+                    console.log('Local file deleted:', localFilePath);
+                }
+            });
+        }
+
+        // Create a new review object with the image URL
+        const newReview = new ReviewPlace({
+            reviewerName,      // User's name from form
+            placeName,         // Place name from form
+            review: reviewText, // Review content from form
+            companyName: campName, // Camp name from form
+            image: imageUrl    // Uploaded image URL or default
         });
+
+        // Save the review to the database
+        await newReview.save();
+        res.redirect('/');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error saving review');
+    }
 });
 
 module.exports = router;

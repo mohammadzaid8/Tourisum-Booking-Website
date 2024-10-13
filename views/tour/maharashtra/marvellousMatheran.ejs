@@ -1,0 +1,163 @@
+<%- include('../../common/header') %>
+<style>
+    .m1 {
+        margin-top: 5px;
+        width: 1200px;
+    }
+
+    .st1 {
+        font-size: 33px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+    }
+
+    .st2 {
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: 10px;
+    }
+
+    .invincible {
+        height: fit-content;
+        width: 200px;
+        background-color: rgb(203, 190, 190);
+        padding: 5px;
+        margin: 2px 5px;
+    }
+
+    .orgcard img {
+        width: 100%;
+        height: 200px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .org {
+        display: flex;
+        padding: 15px;
+        margin: 5px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .card {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 15px;
+        width: 300px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .card-details {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+</style>
+
+<main>
+    <div class="m1">
+        <!-- Event Title -->
+        <div class="st1">
+            Marvellous Matheran
+        </div>
+        <div class="st2">
+            Experience the finest hill station of Maharashtra!
+        </div>
+        <hr>
+
+        <!-- About Section -->
+        <div class="sabout">
+            <div class="st1">
+                About
+            </div>
+
+            <div class="st2">
+                Matheran is situated near Mumbai in Maharashtra and is known for its misty mountains, toy trains, and typical Sahyadri weather. 
+                Marvelous Matheran is an event where trekkers will enjoy the misty mountains and hilly weather. 
+                The place is highly populated on weekends.  
+            </div>
+        </div>
+
+        <!-- Attractions Section -->
+        <div class="st1">Matheran Attractions</div>
+        <div class="st2">Explore the must-visit points in Matheran</div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/12/ce/c5/beautiful-views-from.jpg?w=500&h=400&s=1" alt="Panorama Point">
+                <div class="card-content">
+                    <div class="card-title">Panorama Point</div>
+                    <div class="card-details">
+                        Panorama Point offers a stunning 360-degree view of the Western Ghats and the nearby towns. It's a perfect spot for nature lovers and photographers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/a2/c9/36/louisa-point.jpg?w=500&h=400&s=1" alt="Louisa Point">
+                <div class="card-content">
+                    <div class="card-title">Louisa Point</div>
+                    <div class="card-details">
+                        One of the most famous viewpoints, Louisa Point offers breathtaking views of the valleys, waterfalls, and lush green landscapes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://img.etimg.com/thumb/msid-104981743,width-480,height-360,imgsize-245380,resizemode-75/resumption-details.jpg" alt="Matheran Toy Train">
+                <div class="card-content">
+                    <div class="card-title">Matheran Toy Train</div>
+                    <div class="card-details">
+                        The Matheran Toy Train is a fun and scenic way to explore the hill station. The narrow-gauge railway winds through the mountains, offering picturesque views along the way.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/ac/2e/f5/echo-point.jpg?w=500&h=-1&s=1" alt="Echo Point">
+                <div class="card-content">
+                    <div class="card-title">Echo Point</div>
+                    <div class="card-details">
+                        A popular spot in Matheran, Echo Point is famous for its echo phenomenon and the serene view it offers of the surrounding hills.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/07/6c/25/img-20170727-wa0168-largejpg.jpg?w=500&h=400&s=1" alt="One Tree Hill Point">
+                <div class="card-content">
+                    <div class="card-title">One Tree Hill Point</div>
+                    <div class="card-details">
+                        A unique hilltop attraction with a solitary tree at the summit, offering panoramic views and a peaceful atmosphere for trekkers.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br>
+</main>
+
+<%- include('../../common/footer') %>

@@ -6,6 +6,9 @@ const ejs = require('ejs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
+const bcrypt=require('bcrypt')
+const cookieparser=require('cookie-parser');
+const jwt = require('jsonwebtoken');
 
 dotenv.config(); // Load environment variables early
 
@@ -23,15 +26,24 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json()); // To parse JSON bodies
 app.use(express.static(path.join(__dirname, 'public')));
 
+//middleware for cookie
+app.use(cookieparser());
+
 // Import routes
 const home = require('./router/home/home.page');
 const about = require('./router/home/about.page');
 const contact = require('./router/home/contact.page');
 const reviewPlaces = require('./router/home/review.page');
 const tours=require('./router/home/tours.page');
+const login=require('./router/home/login.page');
 
 const saputara=require('./router/tours/gujarat/saputara.page');
 const mountabu=require('./router/tours/rajasthan/mountabu.page');
+const marvellousMatheran=require('./router/tours/maharashtra/MarvellousMatheran.page');
+const manali=require('./router/tours/kashmir/manali.page');
+const hamptapass=require('./router/tours/kashmir/hamptapass.page');
+
+
 
 // Use routes
 app.use('/', home);
@@ -39,9 +51,13 @@ app.use('/about', about);
 app.use('/contact', contact);
 app.use('/review', reviewPlaces);
 app.use('/tours',tours);
+app.use('/login',login);
 
 app.use('/tours/saputara',saputara);
 app.use('/tours/mountabu',mountabu);
+app.use('/tours/matheran',marvellousMatheran);
+app.use('/tours/manali',manali);
+app.use('/tours/hamtaPass',hamptapass);
 
 
 // Start the server

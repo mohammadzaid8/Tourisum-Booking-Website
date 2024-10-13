@@ -1,0 +1,160 @@
+<%- include('../../common/header') %>
+
+<style>
+    .m1 {
+        margin-top: 5px;
+        width: 1200px;
+    }
+
+    .st1 {
+        font-size: 33px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+    }
+
+    .st2 {
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: 10px;
+    }
+
+    .invincible {
+        height: fit-content;
+        width: 200px;
+        background-color: rgb(203, 190, 190);
+        padding: 5px;
+        margin: 2px 5px;
+    }
+
+    .orgcard img {
+        width: 100%;
+        height: 200px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .org {
+        display: flex;
+        padding: 15px;
+        margin: 5px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .card {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 15px;
+        width: 300px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .card-details {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+</style>
+
+<main>
+    <div class="m1">
+        <div class="st1">
+            Manali Trekking Camp
+        </div>
+        <div class="st2">
+            Bhrigu Lake Trek
+        </div>
+        <hr>
+
+        <div class="sabout">
+            <div class="st1">
+                About
+            </div>
+
+            <div class="st2">
+                Situated at an elevation of around 14000 feet above sea level, Bhrigu Lake in Manali exhibits a unique radiance during late summers and monsoons, reflecting the changing hues of the sky. Known for its pristine waters that shift in color with the sun's movement, the lake is a captivating sight. Manali also stands out as a hub for various aero sports, offering a rich tapestry of experiences and attractions. Often hailed as God's paradise, Manali boasts majestic mountains, meandering rivers, fragrant forests, and a stunning array of natural colors. Legend has it that the name "Manali" is derived from the revered sage Manu, who is said to have meditated in this very place. Trekking in Manali is considered both challenging and exhilarating by a large number of enthusiasts.
+            </div>
+        </div>
+
+        <!-- Attractions Section -->
+        <div class="st1">Manali Attractions</div>
+        <div class="st2">Explore the must-visit points in Manali</div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5b/2f/ca/photo8jpg.jpg?w=500&h=-1&s=1" alt="Solang Valley">
+                <div class="card-content">
+                    <div class="card-title">Solang Valley</div>
+                    <div class="card-details">
+                        Known for its picturesque scenery, Solang Valley offers adventure sports like paragliding, skiing, and snowboarding, making it a must-visit attraction in Manali.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/2c/33/5f/at-the-time-of-summers.jpg?w=500&h=-1&s=1" alt="Manikaran Sahib">
+                <div class="card-content">
+                    <div class="card-title">Manikaran Sahib</div>
+                    <div class="card-details">
+                        A famous pilgrimage site, Manikaran Sahib is a hot spring destination where visitors can experience spiritual bliss and soak in therapeutic waters.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/2c/33/5f/at-the-time-of-summers.jpg?w=500&h=-1&s=1" alt="Hadimba Temple">
+                <div class="card-content">
+                    <div class="card-title">Hadimba Temple</div>
+                    <div class="card-details">
+                        Surrounded by cedar forests, the ancient Hadimba Temple is dedicated to the goddess Hadimba and features a unique pagoda-shaped roof.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/5d/d8/c7/waterfall.jpg?w=500&h=400&s=1" alt="Jogini Waterfalls">
+                <div class="card-content">
+                    <div class="card-title">Jogini Waterfalls</div>
+                    <div class="card-details">
+                        Jogini Waterfalls is a stunning natural attraction with a scenic trek leading up to a magnificent waterfall nestled in the hills.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/46/76/ba/photo2jpg.jpg?w=500&h=-1&s=1" alt="Parvati River">
+                <div class="card-content">
+                    <div class="card-title">Parvati River</div>
+                    <div class="card-details">
+                        Flowing through the serene Parvati Valley, the Parvati River is a peaceful and picturesque destination, ideal for nature lovers and trekkers.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br>
+</main>
+
+<%- include('../../common/footer') %>

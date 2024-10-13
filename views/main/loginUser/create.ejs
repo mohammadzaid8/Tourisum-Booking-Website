@@ -1,0 +1,146 @@
+<%- include('../../common/header') %>
+
+<style>
+    .signup-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        background-color: #f4f4f4;
+    }
+
+    .signup-box {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 450px;
+    }
+
+    .signup-box h2 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .signup-box form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .signup-box input[type="text"],
+    .signup-box input[type="email"],
+    .signup-box input[type="password"] {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .signup-box button {
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .signup-box button:hover {
+        background-color: #0056b3;
+    }
+
+    .login-link {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .login-link a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .login-link a:hover {
+        text-decoration: underline;
+    }
+
+    .error {
+        color: red;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+</style>
+
+<div class="signup-container">
+    <div class="signup-box">
+        <h2>Create a New Account</h2>
+
+        <!-- Display backend error message -->
+        <% if (typeof errorMessage !== 'undefined') { %>
+            <p class="error"><%= errorMessage %></p>
+        <% } %>
+
+        <form id="signupForm" action="/login/createuser" method="POST" onsubmit="return validateForm()">
+            <input type="text" name="username" id="username" placeholder="Username (min 5 characters)" minlength="5" required>
+            <span class="error" id="usernameError"></span>
+
+            <input type="text" name="firstname" placeholder="First Name" required>
+            <input type="text" name="lastname" placeholder="Last Name" required>
+
+            <input type="email" name="email" id="email" placeholder="Email Address" required>
+            <span class="error" id="emailError"></span>
+
+            <input type="password" name="password" id="password" placeholder="Password (min 8 characters)" required>
+            <span class="error" id="passwordError"></span>
+
+            <button type="submit">Create Account</button>
+        </form>
+        <div class="login-link">
+            <p>Already have an account? <a href="/login">Login here</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Frontend validation logic
+    function validateForm() {
+        // Clear previous errors
+        document.getElementById('usernameError').textContent = '';
+        document.getElementById('emailError').textContent = '';
+        document.getElementById('passwordError').textContent = '';
+
+        let username = document.getElementById('username').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+
+        let valid = true;
+
+        // Username validation
+        if (username.length < 5) {
+            document.getElementById('usernameError').textContent = 'Username must be at least 5 characters long.';
+            valid = false;
+        }
+
+        // Email validation (you can also validate uniqueness on the backend)
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+            valid = false;
+        }
+
+        // Password validation
+        let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/;
+        if (!passwordPattern.test(password)) {
+            document.getElementById('passwordError').textContent = 'Password must contain at least 8 characters, including uppercase, lowercase, number, and symbol.';
+            valid = false;
+        }
+
+        return valid;
+    }
+</script>
+
+<%- include('../../common/footer') %>

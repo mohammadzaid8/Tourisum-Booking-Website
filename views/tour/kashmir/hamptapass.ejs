@@ -1,0 +1,160 @@
+<%- include('../../common/header') %>
+
+<style>
+    .m1 {
+        margin-top: 5px;
+        width: 1200px;
+    }
+
+    .st1 {
+        font-size: 33px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+    }
+
+    .st2 {
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: 10px;
+    }
+
+    .invincible {
+        height: fit-content;
+        width: 200px;
+        background-color: rgb(203, 190, 190);
+        padding: 5px;
+        margin: 2px 5px;
+    }
+
+    .orgcard img {
+        width: 100%;
+        height: 200px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .org {
+        display: flex;
+        padding: 15px;
+        margin: 5px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .card {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 15px;
+        width: 300px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .card-details {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+</style>
+
+<main>
+    <div class="m1">
+        <div class="st1">
+            Hampta Pass Chandra Taal Trek
+        </div>
+        <div class="st2">
+            Treating The Eyes With Serene View Of Snow 
+        </div>
+        <hr>
+
+        <div class="sabout">
+            <div class="st1">
+                About
+            </div>
+
+            <div class="st2">
+                The Hampta Pass trek is an incredible journey that takes you through a unique landscape of lush green valleys, barren landscapes of Spiti, and the spectacular Chandratal Lake. At an elevation of over 14,000 feet, the trek offers panoramic views of snow-covered peaks, alpine meadows, and pristine rivers. Hampta Pass is perfect for trekkers looking to experience the diverse beauty of the Himalayas.
+            </div>
+        </div>
+
+        <!-- Attractions Section -->
+        <div class="st1">Hampta Pass Attractions</div>
+        <div class="st2">Explore the top attractions around the Hampta Pass trek</div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/70/ec/98/caption.jpg?w=300&h=300&s=1" alt="Hampta Pass View">
+                <div class="card-content">
+                    <div class="card-title">Hampta Pass</div>
+                    <div class="card-details">
+                        This mountain pass offers stunning views of the Kullu and Lahaul valleys, and the challenging yet rewarding trek is a highlight for adventurers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7c/6e/0b/caption.jpg?w=300&h=300&s=1" alt="Chandratal Lake">
+                <div class="card-content">
+                    <div class="card-title">Chandratal Lake</div>
+                    <div class="card-details">
+                        Known as the “Moon Lake,” Chandratal is a pristine, crystal-clear lake surrounded by towering mountains, making it a breathtaking camping spot.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/ac/ee/a6/caption.jpg?w=300&h=300&s=1" alt="Shea Goru Valley">
+                <div class="card-content">
+                    <div class="card-title">Shea Goru Valley</div>
+                    <div class="card-details">
+                        The Shea Goru Valley is known for its green meadows and is a peaceful halt for trekkers before the challenging ascent to Hampta Pass.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/2e/69/55/caption.jpg?w=300&h=300&s=1" alt="Jobra">
+                <div class="card-content">
+                    <div class="card-title">Jobra</div>
+                    <div class="card-details">
+                        Jobra is the starting point of the Hampta Pass trek, offering stunning views of the valley with dense forests and flowing rivers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/2e/69/55/caption.jpg?w=300&h=300&s=1" alt="Balu Ka Ghera">
+                <div class="card-content">
+                    <div class="card-title">Balu Ka Ghera</div>
+                    <div class="card-details">
+                        A beautiful campsite nestled in the mountains, Balu Ka Ghera is a popular rest stop for trekkers on their way to Hampta Pass.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br>
+</main>
+
+<%- include('../../common/footer') %>

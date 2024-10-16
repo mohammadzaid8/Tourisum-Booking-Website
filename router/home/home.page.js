@@ -7,7 +7,7 @@ router.get('/',(req,res)=>{
     ReviewPlaces.find().sort({ createdAt: -1 }).limit(5)
     .then(review=>
         {
-        res.render('../views/main/home',{review});
+        res.render('../views/main/home',{review, auth:req.session.auth});
     })
     .catch(err=>{
             res.status(500).send('Server Error');

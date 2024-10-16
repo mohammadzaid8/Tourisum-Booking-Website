@@ -4,7 +4,9 @@ const User=require('../../model/user/user.model');
 const bcrypt=require('bcrypt');
 
 router.get('/', (req, res) => {
-            res.render('../views/main/loginUser/login');  
+            res.render('../views/main/loginUser/login', {
+                auth: req.session.auth
+            });  
 
 });
 
@@ -25,8 +27,7 @@ router.post('/', async (req, res) => {
             // If password is incorrect
             return res.render('../views/main/loginUser/login', { errorMessage: 'Incorrect password' });
         }
-
-        
+        req.session.auth = true;
         res.redirect('/');
     } catch (error) {
         // Handle any unexpected errors

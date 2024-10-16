@@ -9,6 +9,8 @@ const dotenv = require('dotenv');
 const bcrypt=require('bcrypt')
 const cookieparser=require('cookie-parser');
 const jwt = require('jsonwebtoken');
+const session = require("express-session");
+const crypto = require("crypto");
 
 dotenv.config(); // Load environment variables early
 
@@ -36,6 +38,8 @@ const contact = require('./router/home/contact.page');
 const reviewPlaces = require('./router/home/review.page');
 const tours=require('./router/home/tours.page');
 const login=require('./router/home/login.page');
+const admin=require('./router/admin/admin.page');
+const dashboard=require('./router/admin/dashboard/dashboard.page');
 
 const saputara=require('./router/tours/gujarat/saputara.page');
 const mountabu=require('./router/tours/rajasthan/mountabu.page');
@@ -43,15 +47,31 @@ const marvellousMatheran=require('./router/tours/maharashtra/MarvellousMatheran.
 const manali=require('./router/tours/kashmir/manali.page');
 const hamptapass=require('./router/tours/kashmir/hamptapass.page');
 
+const secretKey = crypto.randomBytes(32).toString('hex');
 
+app.use(session({
+    secret: secretKey,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        expires: false,
+    }
+}));
 
 // Use routes
+app.use('/login',login);
 app.use('/', home);
 app.use('/about', about);
 app.use('/contact', contact);
 app.use('/review', reviewPlaces);
 app.use('/tours',tours);
-app.use('/login',login);
+app.use('/admin',admin);
+app.use('/dashboard',dashboard);
+
+app.use("/logout",(req,res)=> {
+    delete req.session.auth;
+    res.redirect('/login');
+})
 
 app.use('/tours/saputara',saputara);
 app.use('/tours/mountabu',mountabu);

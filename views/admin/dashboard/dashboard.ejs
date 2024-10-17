@@ -5,243 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Owner Dashboard</title>
     <style>
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f0f0f0;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .dashboard-container {
-        width: 85%;
-        max-width: 1200px;
-        margin: auto;
-        padding: 20px;
-        background-color: #ffffff;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-    }
-    
-    header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-    header h1 {
-        color: #007BFF;
-        font-size: 2.5em;
-    }
-    
-    nav ul {
-        list-style: none;
-        padding: 0;
-    }
-    
-    nav ul li {
-        display: inline;
-        margin: 0 20px;
-    }
-    
-    nav ul li a {
-        text-decoration: none;
-        color: #007BFF;
-        font-weight: bold;
-        transition: color 0.3s;
-    }
-    
-    nav ul li a:hover {
-        color: #0056b3;
-    }
-    
-    .dashboard-section {
-        margin-bottom: 30px;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #f9f9f9;
-    }
-    
-    .dashboard-section h2 {
-        margin-top: 0;
-        color: #333;
-        border-bottom: 2px solid #007BFF;
-        padding-bottom: 10px;
-    }
-    
-    form {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    form label {
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-    
-    form input, form textarea {
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        transition: border-color 0.3s;
-    }
-    
-    form input:focus, form textarea:focus {
-        border-color: #007BFF;
-    }
-    
-    button {
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #007BFF;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-    
-    button:hover {
-        background-color: #0056b3;
-    }
-    
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-    }
-    
-    table th, table td {
-        padding: 10px;
-        border: 1px solid #ddd;
-        text-align: left;
-    }
-    
-    .analytics-card {
-        background-color: #e9f7ff;
-        padding: 15px;
-        border-radius: 8px;
-        margin-top: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .analytics-card h3 {
-        margin: 5px 0;
-    }
-    
-    .notifications {
-        list-style: none;
-        padding: 0;
-    }
-    
-    .notifications li {
-        background-color: #fff;
-        margin: 5px 0;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-</style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dashboard-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        header h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .dashboard-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dashboard-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .dashboard-button:active {
+            transform: translateY(0);
+        }
+
+        .dashboard-button i {
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+
+        @media (max-width: 500px) {
+            .dashboard-button {
+                padding: 15px;
+                font-size: 1em;
+            }
+        }
+    </style>
+    <!-- Optional: Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="dashboard-container">
         <header>
             <h1>Tour Owner Dashboard</h1>
-            <nav>
-                <ul>
-                    <li><a href="#tour-creation">Create Tour</a></li>
-                    <li><a href="#change-settings">Change Email/Password</a></li>
-                    <li><a href="#current-tours">Current Tours</a></li>
-                    <li><a href="#payment-flow">Payment Flow</a></li>
-                    <li><a href="#analytics">User Analytics</a></li>
-                    <li><a href="#notifications">Notifications</a></li>
-                </ul>
-            </nav>
         </header>
-
-        <main>
-            <section id="tour-creation" class="dashboard-section">
-                <h2>Create Tour</h2>
-                <form>
-                    <label for="tour-name">Tour Name:</label>
-                    <input type="text" id="tour-name" name="tour-name" required>
-
-                    <label for="tour-description">Description:</label>
-                    <textarea id="tour-description" name="tour-description" required></textarea>
-
-                    <label for="tour-date">Date:</label>
-                    <input type="date" id="tour-date" name="tour-date" required>
-
-                    <button type="submit">Add Tour</button>
-                </form>
-            </section>
-
-            <section id="change-settings" class="dashboard-section">
-                <h2>Change Email/Password</h2>
-                <form>
-                    <label for="email">New Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="password">New Password:</label>
-                    <input type="password" id="password" name="password" required>
-
-                    <button type="submit">Update Settings</button>
-                </form>
-            </section>
-
-            <section id="current-tours" class="dashboard-section">
-                <h2>Current Tours</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Tour Name</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Adventure in the Mountains</td>
-                            <td>Active</td>
-                        </tr>
-                        <tr>
-                            <td>Beach Holiday</td>
-                            <td>Pending</td>
-                        </tr>
-                        <tr>
-                            <td>Cultural Tour</td>
-                            <td>Completed</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section id="payment-flow" class="dashboard-section">
-                <h2>Payment Flow</h2>
-                <ul>
-                    <li>Payment from Adventure in the Mountains: $200 (Confirmed)</li>
-                    <li>Payment from Beach Holiday: $150 (Pending)</li>
-                    <li>Payment from Cultural Tour: $300 (Confirmed)</li>
-                </ul>
-            </section>
-
-            <section id="analytics" class="dashboard-section">
-                <h2>User Analytics</h2>
-                <div class="analytics-card">
-                    <h3>Total Tours Created: <span>12</span></h3>
-                    <h3>Total Users Registered: <span>200</span></h3>
-                    <h3>Total Revenue: <span>$4,500</span></h3>
-                </div>
-            </section>
-
-            <section id="notifications" class="dashboard-section">
-                <h2>Notifications</h2>
-                <ul>
-                    <li>Your payment of $200 for Adventure in the Mountains has been confirmed.</li>
-                    <li>New user registered: John Doe.</li>
-                    <li>Upcoming tour on 25th October: Beach Holiday.</li>
-                </ul>
-            </section>
-        </main>
+        <div class="button-grid">
+            <a href="/dashboard/createtour" class="dashboard-button">
+                <i class="fas fa-plus-circle"></i> Create Tour
+            </a>
+            <a href="/change-settings" class="dashboard-button">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+            <a href="/current-tours" class="dashboard-button">
+                <i class="fas fa-map-marked-alt"></i> Current Tours
+            </a>
+            <a href="/payment-flow" class="dashboard-button">
+                <i class="fas fa-credit-card"></i> Payments
+            </a>
+            <a href="/analytics" class="dashboard-button">
+                <i class="fas fa-chart-line"></i> Analytics
+            </a>
+            <a href="/notifications" class="dashboard-button">
+                <i class="fas fa-bell"></i> Notifications
+            </a>
+            <!-- New Buttons -->
+            <a href="/dashboard/editpassword" class="dashboard-button">
+                <i class="fas fa-key"></i> Edit Password
+            </a>
+            <a href="/dashboard/logout" class="dashboard-button">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
     </div>
 </body>
 </html>

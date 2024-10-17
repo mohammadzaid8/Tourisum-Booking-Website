@@ -25,7 +25,11 @@ router.post('/dashboard',async(req,res)=>{
             return res.render('../views/admin/admin', { error: 'Invalid password', email });
         }
 
-        req.session.owner = owner; 
+        req.session.owner = {
+            email: owner.email,
+            id: owner._id  // Optionally store the owner's ID as well
+        };
+ 
 
         res.redirect('/dashboard');
         

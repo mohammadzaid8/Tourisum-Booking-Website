@@ -40,6 +40,8 @@ const tours=require('./router/home/tours.page');
 const login=require('./router/home/login.page');
 const admin=require('./router/admin/admin.page');
 const dashboard=require('./router/admin/dashboard/dashboard.page');
+const editpassword=require('./router/admin/dashboard/editpassword.page');
+const tourcreation=require('./router/admin/dashboard/tour.creation.page');
 
 const saputara=require('./router/tours/gujarat/saputara.page');
 const mountabu=require('./router/tours/rajasthan/mountabu.page');
@@ -55,6 +57,7 @@ app.use(session({
     saveUninitialized: true,
     cookie: {
         expires: false,
+        httpOnly:false
     }
 }));
 
@@ -67,11 +70,18 @@ app.use('/review', reviewPlaces);
 app.use('/tours',tours);
 app.use('/admin',admin);
 app.use('/dashboard',dashboard);
+app.use('/dashboard/editpassword',editpassword);
+app.use('/dashboard/createtour',tourcreation);
 
 app.use("/logout",(req,res)=> {
     delete req.session.auth;
     res.redirect('/login');
-})
+});
+
+app.use("/dashboard/logout",(req,res)=> {
+    delete req.session.owner ;
+    res.redirect('/admin');
+});
 
 app.use('/tours/saputara',saputara);
 app.use('/tours/mountabu',mountabu);

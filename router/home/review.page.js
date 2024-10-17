@@ -11,7 +11,8 @@ const defaultImageUrl = 'https://res.cloudinary.com/your_cloud_name/image/upload
 
 // Render the review form
 router.get('/', (req, res) => {
-    res.render('../views/main/review');
+    const auth = req.session.auth || false;
+    res.render('../views/main/review',{ auth});
 });
 
 // Handle form submission with file upload

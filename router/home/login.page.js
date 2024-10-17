@@ -4,8 +4,10 @@ const User=require('../../model/user/user.model');
 const bcrypt=require('bcrypt');
 
 router.get('/', (req, res) => {
+    const auth = req.session.auth || false;
+    console.log("req.session",req.session);
             res.render('../views/main/loginUser/login', {
-                auth: req.session.auth
+                auth
             });  
 
 });
@@ -61,7 +63,7 @@ router.post('/createuser',async(req,res)=>{
     
         await newuser.save();
     
-        console.log(newuser);
+        
     res.redirect('/login');
 
     }catch(error){

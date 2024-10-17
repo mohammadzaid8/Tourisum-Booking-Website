@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-            res.render('../views/main/about');
+    const auth = req.session.auth || false;
+            res.render('../views/main/about',{ auth});
         
        
 });

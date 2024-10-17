@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Tour</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .form-container h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group button {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group button:focus {
+            background-color: #004085;
+        }
+
+        .form-group input[type="date"]::-webkit-calendar-picker-indicator {
+            background-color: #007BFF;
+            color: white;
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        @media (max-width: 500px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            .form-group button {
+                padding: 12px;
+                font-size: 1em;
+            }
+        }
+
+        .error-message {
+            color: red;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Create a New Tour</h1>
+        <form id="createTourForm" action="/dashboard/createtour" method="post">
+            <div class="form-group">
+                <label for="title">Tour Title:</label>
+                <input type="text" id="title" name="title" placeholder="Enter the tour title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="Enter the tour location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Tour Description:</label>
+                <textarea id="description" name="description" placeholder="Provide a brief description of the tour" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price (in ₹):</label>
+                <input type="number" id="price" name="price" placeholder="Enter the price for the tour" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Tour Date:</label>
+                <input type="date" id="date" name="date" required>
+                <div id="dateError" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Create Tour</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('createTourForm');
+        const dateInput = document.getElementById('date');
+        const dateError = document.getElementById('dateError');
+
+        // Function to set minimum date (3 days ahead)
+        function setMinDate() {
+            const today = new Date();
+            const minDate = new Date();
+            minDate.setDate(today.getDate() + 3); // 3 days from today
+            
+            // Convert to YYYY-MM-DD format
+            const year = minDate.getFullYear();
+            const month = ('0' + (minDate.getMonth() + 1)).slice(-2);
+            const day = ('0' + minDate.getDate()).slice(-2);
+            const formattedDate = `${year}-${month}-${day}`;
+
+            // Set min attribute in date input
+            dateInput.setAttribute('min', formattedDate);
+        }
+
+        // Call the function to set the minimum date on page load
+        setMinDate();
+
+        form.addEventListener('submit', function(event) {
+            const selectedDate = new Date(dateInput.value);
+            const today = new Date();
+            const minDate = new Date();
+            minDate.setDate(today.getDate() + 3); // 3 days from today
+            
+            // Validate date
+            if (selectedDate < minDate) {
+                event.preventDefault();
+                dateError.textContent = 'Tour date must be at least 3 days from today.';
+            } else {
+                dateError.textContent = ''; // Clear any previous error
+            }
+        });
+    </script>
+
+</body>
+</html>

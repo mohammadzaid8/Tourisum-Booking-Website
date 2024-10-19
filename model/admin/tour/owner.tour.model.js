@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const tourSchema = new mongoose.Schema({
+    organization:{ type: String, required: true},
     title: { type: String, required: true },
     location: { type: String, required: true }, // e.g., 'Manali', 'Leh'
     description: { type: String, required: true },

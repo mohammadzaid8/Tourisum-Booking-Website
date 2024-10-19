@@ -1,4 +1,5 @@
 <%- include('../../common/header') %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
     .m1 {
@@ -46,7 +47,6 @@
         display: flex;
         flex-wrap: wrap;
         margin-top: 20px;
-        justify-content: space-between;
     }
 
     .card {
@@ -77,6 +77,98 @@
     .card-details {
         font-size: 16px;
         margin: 5px 0;
+    }
+
+    /* New styles for the tour section */
+    .tour-section {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .tour-section .st1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .tour-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tour-card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 15px;
+        width: 300px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        text-align: left;
+        position: relative;
+    }
+
+    .tour-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .tour-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 2px solid #007bff;
+    }
+
+    .tour-card-content {
+        padding: 15px;
+    }
+
+    .tour-card-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    .tour-card-date, .tour-card-details {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    /* Icons for the date and description */
+    .tour-card-date i,
+    .tour-card-details i {
+        font-size: 18px;
+        color: #007bff;
+        margin-right: 8px;
+    }
+
+    .tour-card-date {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .tour-card-details {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .no-tours {
+        font-size: 20px;
+        color: #e74c3c;
+        margin-top: 30px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .tour-card {
+            width: 90%;
+        }
     }
 </style>
 
@@ -162,6 +254,39 @@
         </div>
     </div>
     <br>
+
+    <div class="tour-section">
+        <div class="st1">Available Tours for Saputara</div>
+    
+        <div class="tour-card-container">
+            <% if (tours && tours.length > 0) { %>
+                <% tours.forEach(tour => { %>
+                    <div class="tour-card">
+                        <img src="<%= tour.imageUrl %>" alt="<%= tour.title %>">
+                        <div class="tour-card-content">
+                            <div class="tour-card-title"><%= tour.title %></div>
+                            
+                            <div class="tour-card-organization">
+                                <strong>Organization:</strong> <%= tour.organization %>
+                            </div>
+    
+                            <div class="tour-card-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                Date: <%= new Date(tour.date).toLocaleDateString('en-US', { day: 'numeric', month: 'short' }) %>
+                            </div>
+                            
+                            <div class="tour-card-details">
+                                <i class="fas fa-info-circle"></i>
+                                <%= tour.description %>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p class="no-tours">No tours available at the moment.</p>
+            <% } %>
+        </div>
+    </div>
 </main>
 
 <%- include('../../common/footer') %>

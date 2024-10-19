@@ -10,12 +10,13 @@ router.get('/',islog, (req, res) => {
 
 // Handle tour creation form submission
 router.post('/', async (req, res) => {
-    const { title, location, description, price, date } = req.body;
+    const { organization, title, location, description, price, date } = req.body;
     
     try {
-        const newTour = new Tour({ title, location, description, price, date });
+        const newTour = new Tour({organization,title, location, description, price, date });
         await newTour.save();
-        res.redirect(`/tours/${location.toLowerCase()}`); // Redirect to the location-specific page
+        
+        res.redirect(`/tours/${location.toLowerCase()}`); 
     } catch (error) {
         console.error('Error creating tour:', error);
         res.status(500).render('../view/admin/dashboard/createtour', { message: 'Failed to create tour. Try again later.' });

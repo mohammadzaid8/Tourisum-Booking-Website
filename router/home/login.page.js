@@ -5,30 +5,33 @@ const bcrypt=require('bcrypt');
 
 router.get('/', (req, res) => {
     const auth = req.session.auth || false;
-    console.log("req.session",req.session);
-            res.render('../views/main/loginUser/login', {
-                auth
-            });  
+            
+            res.render('../views/main/loginUser/login', {auth});  
 
 });
 
 router.post('/', async (req, res) => {
     try {
+
+        const auth = req.session.auth || false;
+
         const { email, password } = req.body;
 
         // Find user by email
         const user = await User.findOne({ email: email });
         if (!user) {
             // If email doesn't exist
-            return res.render('../views/main/loginUser/login', { errorMessage: 'Email ID does not exist' });
+            return res.render('../views/main/loginUser/login', { errorMessage: 'Email ID does not exist',auth });
         }
 
         // Compare the entered password with the hashed password in the database
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
             // If password is incorrect
-            return res.render('../views/main/loginUser/login', { errorMessage: 'Incorrect password' });
+
+            return res.render('../views/main/loginUser/login', { errorMessage: 'Incorrect password',auth });
         }
+        console.log("outerpart")
         req.session.auth = true;
         res.redirect('/');
     } catch (error) {
@@ -39,16 +42,19 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/createuser', (req, res) => {
-    res.render('../views/main/loginUser/create');      
+    const auth = req.session.auth || false;
+    res.render('../views/main/loginUser/create',{auth});      
 });
 
 router.post('/createuser',async(req,res)=>{
     try{
+        const auth = req.session.auth || false;
+
         const {username,firstname,lastname,email,password}=req.body;
 
         const existemail=await User.findOne({email:email});
         if(existemail){
-            return res.render('../views/main/loginUser/create', { errorMessage: 'Email ID already exists' });
+            return res.render('../views/main/loginUser/create', { errorMessage: 'Email ID already exists',auth });
         }
         
         const hashPassword=await bcrypt.hash(password,10)

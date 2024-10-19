@@ -22,6 +22,7 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 500px;
+            box-sizing: border-box; /* Ensures padding is included in width */
         }
 
         .form-container h1 {
@@ -50,7 +51,7 @@
             border-radius: 8px;
             font-size: 1em;
             outline: none;
-            box-sizing: border-box;
+            box-sizing: border-box; /* Ensures padding is included in width */
         }
 
         .form-group input:focus,
@@ -114,6 +115,11 @@
     <div class="form-container">
         <h1>Create a New Tour</h1>
         <form id="createTourForm" action="/dashboard/createtour" method="post">
+            <div class="form-group">
+                <label for="organization">Organization:</label>
+                <input type="text" id="organization" name="organization" placeholder="Enter your organization name" required>
+            </div>
+            
             <div class="form-group">
                 <label for="title">Tour Title:</label>
                 <input type="text" id="title" name="title" placeholder="Enter the tour title" required>

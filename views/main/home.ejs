@@ -93,6 +93,19 @@
   color: #007bff; /* Highlighting the reviewer's name */
 }
 
+#reviewOfUser{
+  padding: 20px;
+  margin: 10px auto;
+  max-width: 1200px; 
+  width: 100%; 
+  font-size: 1rem; 
+  line-height: 1.6; 
+  text-align: justify; 
+  color: #333; 
+  overflow-wrap: break-word; 
+  
+}
+
 @media (max-width: 768px) {
   .testimonials-slider {
     flex-direction: column;
@@ -118,28 +131,28 @@
     <h2>Popular Destinations</h2>
     <div class="destination-cards">
       <!-- Destination Card Example -->
-      <div class="card">
-        <img src="img/manali/m1.jpg" alt="Destination 1">
+      <div class="card" >
+        <img src="https://res.cloudinary.com/dgnsd54et/image/upload/v1729444712/thembail%20for%20tourisum%20website/bsmmx666n7czs8hjvpc8.jpg" alt="Destination 1">
         <h3><a href="/tours/manali">Manali</a></h3>
         <p>Situated at an elevation of around 14000 feet above sea level, Bhrigu Lake in Manali exhibits a unique radiance during late summers and monsoons, reflecting the changing hues of the sky.</p>
       </div>
 
       <div class="card">
-        <img src="img/saputara/s1.jpg" alt="Destination 1">
+        <img src="https://res.cloudinary.com/dgnsd54et/image/upload/v1729444712/thembail%20for%20tourisum%20website/p8plruvznucb5gmeqycb.jpg" alt="Destination 1">
         <h3><a href="/tours/saputara">saputara</a></h3>
 
         <p>Saputara hill station is situated in the district of Dang. It is a part of the Sahyadri range of mountains and the highest point is at an altitude of 1081 metres from sea level.</p>
       </div>
 
       <div class="card">
-        <img src="img/abu/a1.jpg" alt="Destination 1">
-        <h3><a href="/tours/muantabu">Maunt Abu</a></h3>
+        <img src="https://res.cloudinary.com/dgnsd54et/image/upload/v1729444711/thembail%20for%20tourisum%20website/jkatx2pqsnyg9m0i1vxo.jpg" alt="Destination 1">
+        <h3><a href="/tours/mountabu">Maunt Abu</a></h3>
 
         <p>Mount Abu is a popular hill station in the Aravalli Range in Sirohi district of Rajasthan state. Mount Abu is located at the altitude of 1220 meters from sea level and hence is an attractive hill station of people from Gujarat as well as Rajasthan.</p>
       </div>
 
       <div class="card">
-        <img src="img/marvelous-mathera/mm1.jpg" alt="Destination 1">
+        <img src="https://res.cloudinary.com/dgnsd54et/image/upload/v1729444711/thembail%20for%20tourisum%20website/oisnatsfcvog3lq7nim8.jpg" alt="Destination 1">
         <h3><a href="/tours/matheran">marvelous-mathera</a></h3>
 
         <p>Matheran is situated near Mumbai in Maharashtra and is known for its misty mountains, toy trains and typical sahyadri weather.</p>
@@ -154,21 +167,21 @@
     <div class="tour-cards">
       <!-- Tour Card Example -->
       <div class="card">
-        <img src="img/manali/m2.jpg" alt="Tour 1">
+        <img src="https://res.cloudinary.com/dgnsd54et/image/upload/v1729444712/thembail%20for%20tourisum%20website/bsmmx666n7czs8hjvpc8.jpg" alt="Tour 1">
         <h3>Manali Trekking camp</h3>
         <p>Known for its pristine waters that shift in color with the sun's movement, the lake is a captivating sight. Manali also stands out as a hub for various aero sports, offering a rich tapestry of experiences and attractions. </p>
         <p>Rating: ★★★★☆</p>
       </div>
 
       <div class="card">
-        <img src="img/hampta-pass/hp1.jpg" alt="Tour 1">
+        <img src="https://res.cloudinary.com/dgnsd54et/image/upload/v1729444711/thembail%20for%20tourisum%20website/h6ye3kqeobyfyd3qxrhe.jpg" alt="Tour 1">
         <h3>Hampta Pass Trek</h3>
         <p>Known for its pristine waters that shift in color with the sun's movement, the lake is a captivating sight. Manali also stands out as a hub for various aero sports, offering a rich tapestry of experiences and attractions. </p>
         <p>Rating: ★★★★☆</p>
       </div>
 
       <div class="card">
-        <img src="img/sarpass/ks1.jpg" alt="Tour 1">
+        <img src="https://res.cloudinary.com/dgnsd54et/image/upload/v1729444710/thembail%20for%20tourisum%20website/d4s2ugzdrm0mvwv8lfn1.jpg" alt="Tour 1">
         <h3>Kasol Sar Pass Trek</h3>
         <p>Kasol Sar Pass trek (13850 ft) tucked away in the folds of Pir Panjal Range, hosts a trail along the changing scenes of the turbulent Parvati River, quaint hamlets, gushing waterfalls, endless forests, crisp green meadows, pebbled rivulets and so much more that it’s hard not to give the plot right away </p>
         <p>Rating: ★★★★☆</p>
@@ -205,7 +218,7 @@
             <div class="testimonial">
               <p><b>Campany:<%= review.companyName %></b></p>
               <p><b>Place:<%= review.placeName %></b></p>
-                <p>"<%= review.review %>"</p>
+                <p id="reviewOfUser">"<%= review.review %>"</p>
                 <p style="font-size: larger;">~<b> <%= review.reviewerName %></b></p>
             </div>
           </div>

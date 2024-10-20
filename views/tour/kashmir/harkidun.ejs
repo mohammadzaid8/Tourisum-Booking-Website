@@ -1,0 +1,287 @@
+<%- include('../../common/header') %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+<style>
+    .m1 {
+        margin-top: 5px;
+        width: 1200px;
+    }
+
+    .st1 {
+        font-size: 33px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+    }
+
+    .st2 {
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: 10px;
+    }
+
+    .invincible {
+        height: fit-content;
+        width: 200px;
+        background-color: rgb(203, 190, 190);
+        padding: 5px;
+        margin: 2px 5px;
+    }
+
+    .orgcard img {
+        width: 100%;
+        height: 200px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .org {
+        display: flex;
+        padding: 15px;
+        margin: 5px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .card {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 15px;
+        width: 300px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .card-details {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    /* New styles for the tour section */
+    .tour-section {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .tour-section .st1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .tour-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tour-card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 15px;
+        width: 300px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        text-align: left;
+        position: relative;
+    }
+
+    .tour-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .tour-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 2px solid #007bff;
+    }
+
+    .tour-card-content {
+        padding: 15px;
+    }
+
+    .tour-card-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    .tour-card-date, .tour-card-details {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    /* Icons for the date and description */
+    .tour-card-date i,
+    .tour-card-details i {
+        font-size: 18px;
+        color: #007bff;
+        margin-right: 8px;
+    }
+
+    .tour-card-date {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .tour-card-details {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .no-tours {
+        font-size: 20px;
+        color: #e74c3c;
+        margin-top: 30px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .tour-card {
+            width: 90%;
+        }
+    }
+</style>
+
+<main>
+    <div class="m1">
+        <div class="st1">
+            Har-Ki-Dun Trek
+        </div>
+        <div class="st2">
+            Journey Through the Valley of Gods
+        </div>
+        <hr>
+
+        <div class="sabout">
+            <div class="st1">
+                About
+            </div>
+
+            <div class="st2">
+                The Har Ki Dun trek is an enchanting experience through the "Valley of Gods." Located at an elevation of 11,675 feet, the trek offers stunning views of snow-clad peaks, dense forests, and picturesque villages. It's ideal for trekkers who love nature and mythology, as Har Ki Dun is believed to be the route that the Pandavas took to reach heaven. The trek also passes through the Govind Pashu Vihar National Park, making it a haven for birdwatchers and wildlife enthusiasts.
+            </div>
+        </div>
+
+        <!-- Attractions Section -->
+        <div class="st1">Har-Ki-Dun Attractions</div>
+        <div class="st2">Explore the top attractions around the Har-Ki-Dun trek</div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="https://www.wildlifesanctuary.com/images/har-ki-dun.jpg" alt="Har-Ki-Dun Valley">
+                <div class="card-content">
+                    <div class="card-title">Har-Ki-Dun Valley</div>
+                    <div class="card-details">
+                        Known as the "Valley of Gods," this serene valley offers views of the Swargarohini peaks and rich flora and fauna.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://www.wildlifesanctuary.com/images/osla-village.jpg" alt="Osla Village">
+                <div class="card-content">
+                    <div class="card-title">Osla Village</div>
+                    <div class="card-details">
+                        A quaint village located along the trek, Osla is rich in local culture and features wooden homes and unique temples.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://www.wildlifesanctuary.com/images/jaundhar-glacier.jpg" alt="Jaundhar Glacier">
+                <div class="card-content">
+                    <div class="card-title">Jaundhar Glacier</div>
+                    <div class="card-details">
+                        The Jaundhar Glacier offers spectacular views of snowfields and icy landscapes, making it a perfect spot for photography.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://www.wildlifesanctuary.com/images/gangad-village.jpg" alt="Gangad Village">
+                <div class="card-content">
+                    <div class="card-title">Gangad Village</div>
+                    <div class="card-details">
+                        Another charming village along the trek, Gangad is known for its traditional wooden houses and terraced farms.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://www.wildlifesanctuary.com/images/sankri-base.jpg" alt="Sankri Base">
+                <div class="card-content">
+                    <div class="card-title">Sankri Base</div>
+                    <div class="card-details">
+                        The starting point of the trek, Sankri is a small village surrounded by dense forests and snow-clad peaks.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tour-section">
+            <div class="st1">Available Tours for Har-Ki-Dun</div>
+
+            <div class="tour-card-container">
+                <% if (tours && tours.length > 0) { %>
+                    <% tours.forEach(tour => { %>
+                        <div class="tour-card">
+                            <img src="<%= tour.imageUrl %>" alt="<%= tour.title %>">
+                            <div class="tour-card-content">
+                                <div class="tour-card-title"><%= tour.title %></div>
+
+                                <div class="tour-card-organization">
+                                    <strong>Organization:</strong> <%= tour.organization %>
+                                </div>
+
+                                <div class="tour-card-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Date: <%= new Date(tour.date).toLocaleDateString('en-US', { day: 'numeric', month: 'short' }) %>
+                                </div>
+
+                                <div class="tour-card-details">
+                                    <i class="fas fa-info-circle"></i>
+                                    <%= tour.description %>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p class="no-tours">No tours available at the moment.</p>
+                <% } %>
+            </div>
+        </div>
+    </div><br>
+</main>
+
+<%- include('../../common/footer') %>

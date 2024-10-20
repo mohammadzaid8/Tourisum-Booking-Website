@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 
             return res.render('../views/main/loginUser/login', { errorMessage: 'Incorrect password',auth });
         }
-        console.log("outerpart")
+        
         req.session.auth = true;
         res.redirect('/');
     } catch (error) {

@@ -48,6 +48,13 @@ const mountabu=require('./router/tours/rajasthan/mountabu.page');
 const marvellousMatheran=require('./router/tours/maharashtra/MarvellousMatheran.page');
 const manali=require('./router/tours/kashmir/manali.page');
 const hamptapass=require('./router/tours/kashmir/hamptapass.page');
+const harkidun=require('./router/tours/kashmir/harkidun.page');
+const leh=require('./router/tours/kashmir/lehladakh.page');
+const del=require('./router/tours/kashmir/delhousie.page');
+const valley=require('./router/tours/kashmir/valley.page');
+
+
+
 
 const secretKey = crypto.randomBytes(32).toString('hex');
 
@@ -88,6 +95,10 @@ app.use('/tours/mountabu',mountabu);
 app.use('/tours/matheran',marvellousMatheran);
 app.use('/tours/manali',manali);
 app.use('/tours/hamtaPass',hamptapass);
+app.use('/tours/har-ki-dun',harkidun);
+app.use('/tours/leh-Ladhakh',leh);
+app.use('/tours/delhousie',del);
+app.use('/tours/vally-of-flower',valley);
 
 
 // Start the server
